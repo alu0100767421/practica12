@@ -1,0 +1,77 @@
+
+class Orange
+
+
+	def initialize
+		@edad = 0
+		@altura = 0
+		@contadorNaranjas = 0
+	    	@recolectar = true
+		@mas = 0
+		@muerte = false
+	end
+	  
+	  
+	def pickAnOrange
+		if @contadorNaranjas > 0
+			@recolectar = true
+		else
+			@recolectar = false
+		end
+		if @recolectar == true
+			@contadorNaranjas = @contadorNaranjas - 1
+			print "Deliciosa, te quedan #{@contadorNaranjas} todavia.\n"
+		else
+			print "No hay naranjas\n"
+		end
+	end
+
+	def altura
+		if @muerte == false
+			puts @altura
+		else 
+			print "Bajo Tierra\n"
+		end
+	end
+
+	def oneYearPasses
+		if @muerte == false
+			@edad = @edad + 1
+			print "Aumetar edad de arbol a #{@edad} anyos\n"
+			@altura = @altura + 3
+			print "Aumentar altura arbol a #{@altura} metros\n"
+			if @edad >= 3
+				@mas = @mas + 2
+				@contadorNaranjas = @contadorNaranjas + 5 + @mas	
+			end
+			if @edad > 8
+				print "El arbol esta muerto\n"
+				@muerte = true
+				@contadorNaranjas = 0
+			end
+		
+		end
+	end
+
+	def orangeCount
+		puts @contadorNaranjas
+		return @contadorNaranjas
+	end
+	
+	def edad
+	        
+	        return @edad
+	
+	end
+	
+	def dead
+	
+		if @muerte == true
+		return true
+		end
+	
+	end
+
+end
+
+
